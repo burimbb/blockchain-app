@@ -1,4 +1,4 @@
-# python_blockchain_app-master
+Blockchain App
 
 To get this working, first we should start a blockchain server, by running the following commands:
 
