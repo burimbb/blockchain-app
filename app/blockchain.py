@@ -101,8 +101,11 @@ class Blockchain:
         transactions to the blockchain by adding them to the block
         and figuring out Proof Of Work.
         """
+        
         if not self.unconfirmed_transactions:
             return False
+
+        #last block of chain
 
         last_block = self.last_block
 
