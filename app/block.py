@@ -8,7 +8,7 @@ class Block:
         self.transactions = transactions
         self.timestamp = timestamp
         self.previous_hash = previous_hash
-        self.nonce = nonce
+        self.nonce =nonce
 
     def compute_hash(self):
         """
