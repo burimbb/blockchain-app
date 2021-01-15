@@ -16,7 +16,6 @@ blockchain.create_genesis_block()
 # the address to other participating members of the network
 peers = set()
 
-
 #Flask's way of declaring end-points
 # endpoint to submit a new transaction. This will be used by
 # our application to add new data (posts) to the blockchain
@@ -131,6 +130,7 @@ def create_chain_from_dump(chain_dump):
         added = generated_blockchain.add_block(block, proof)
         if not added:
             raise Exception("The chain dump is tampered!!")
+        else:  # the block is a genesis block, no verification needed
     return generated_blockchain
 
 
