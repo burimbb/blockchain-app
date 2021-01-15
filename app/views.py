@@ -20,6 +20,7 @@ def fetch_posts():
     """
     get_chain_address = "{}/chain".format(CONNECTED_NODE_ADDRESS)
     response = requests.get(get_chain_address)
+    
     if response.status_code == 200:
         content = []
         chain = json.loads(response.content)
@@ -50,6 +51,7 @@ def submit_textarea():
     """
     Endpoint to create a new transaction via our application.
     """
+     #get value from request
     post_content = request.form["content"]
     author = request.form["author"]
 
@@ -60,7 +62,8 @@ def submit_textarea():
 
     # Submit a transaction
     new_tx_address = "{}/new_transaction".format(CONNECTED_NODE_ADDRESS)
-
+    
+    # Submit a transaction
     requests.post(new_tx_address,
                   json=post_object,
                   headers={'Content-type': 'application/json'})
