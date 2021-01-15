@@ -2,11 +2,12 @@ import time
 from app.block import Block
 
 
-class Blockchain:
+class Blockchain(Block):
     # difficulty of our PoW algorithm
     difficulty = 2
 
     def __init__(self):
+        Block.__init__(self,0,[],0,'0')
         self.unconfirmed_transactions = []
         self.chain = []
 
@@ -16,8 +17,8 @@ class Blockchain:
         the chain. The block has index 0, previous_hash as 0, and
         a valid hash.
         """
-        genesis_block = Block(0, [], 0, "0")
-        genesis_block.hash = genesis_block.compute_hash()
+        genesis_block = Block(0,[],0,'0')
+        genesis_block.hash = self.compute_hash()
         self.chain.append(genesis_block)
 
     @property
@@ -106,7 +107,6 @@ class Blockchain:
             return False
 
         #last block of chain
-
         last_block = self.last_block
 
         new_block = Block(index=last_block.index + 1,
@@ -116,7 +116,6 @@ class Blockchain:
 
         proof = self.proof_of_work(new_block)
         self.add_block(new_block, proof)
-
         self.unconfirmed_transactions = []
 
         return True
