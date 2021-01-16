@@ -10,7 +10,7 @@ class Block:
         self.previous_hash = previous_hash
         self.nonce = 0
 
-    def compute_hash(self):
+     def _compute_hash(self):
         """
         A function that return the hash of the block contents.
         """
