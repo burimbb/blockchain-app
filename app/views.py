@@ -122,8 +122,8 @@ def loginSubmit():
         if check_hash:
             return redirect("/")
 
-        else:
-            return "Incorrect password"
+        else:       
+            raise Exception "Incorrect password"
 
     else:
-        return "Incorrect email or password", 400
+        raise Exception ("Incorrect email or password", 400)
