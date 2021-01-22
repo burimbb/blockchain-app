@@ -19,3 +19,6 @@ class User(Block):
     def _compute_hash(self):
         string = "encryptionkey"
         return sha256(string.encode()).hexdigest()
+    
+    def checkPasswordHash(self, password, hash):
+        return bcrypt.check_password_hash(password, hash)
