@@ -5,7 +5,6 @@ from app.block import Block
 from app.blockchain import Blockchain
 from app.exception import ( ValueError, TypeError, EmptyError, CannotValidation)
 
-
 import requests
 
 app = Flask(__name__)

@@ -14,7 +14,7 @@ from app.user import User
 CONNECTED_NODE_ADDRESS = "http://127.0.0.1:8000"
 
 posts = []
-db=pymysql.connect('localhost', 'root', '', 'blockchain_db')
+db=pymysql.connect(host="127.0.0.1", user="root", password="", database="blockchain_db", port = 3306)
 
 
 
@@ -39,9 +39,12 @@ def fetch_posts():
         posts = sorted(content, key=lambda k: k['timestamp'],
                        reverse=True)
 
+@app.route('/')
+def home():
+    return redirect('/login')
 
 # fetch part of nodes
-@app.route('/')
+@app.route('/home')
 def index():
     fetch_posts()
     return render_template('index.html',
@@ -73,7 +76,7 @@ def submit_textarea():
                   json=post_object,
                   headers={'Content-type': 'application/json'})
 
-    return redirect('/')
+    return redirect('/home')
 
 
 def timestamp_to_string(epoch_time):
@@ -120,7 +123,7 @@ def loginSubmit():
         password_hash = result[4]
         check_hash = user.checkPasswordHash(password_hash, password)
         if check_hash:
-            return redirect("/")
+            return redirect("/home")
 
         else:
             raise Exception ("Incorrect password")
