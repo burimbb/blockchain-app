@@ -41,7 +41,7 @@ def fetch_posts():
 
 @app.route('/')
 def home():
-    return redirect('/login')
+    return redirect('/home')
 
 # fetch part of nodes
 @app.route('/home')
