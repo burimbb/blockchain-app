@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" style="background-color: #3490dc;">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -21,23 +21,23 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Flask User Auth</a>
+        <a class="navbar-brand" style="color:white" href="#">Flask User Auth</a>
       </div>
-      <div id="navbar" class="collapse navbar-collapse">
+      <div id="navbar" class="collapse navbar-collapse" >
         <ul class="nav navbar-nav">
           <li>
-            <a href="/">Home</a>
+            <a href="/" style="color:white">Home</a>
           </li>
           {% if session['name'] %}
           <li>
-            <a href="/logout">Logout</a>
+            <a href="/logout" style="color:white">Logout</a>
           </li>
           {% else %}
           <li>
-            <a href="/login">Login</a>
+            <a href="/login" style="color:white">Login</a>
           </li>
           <li>
-            <a href="/register">Register</a </li> {% endif %}
+            <a href="/register" style="color:white">Register</a </li> {% endif %}
         </ul>
       </div>
     </div>
