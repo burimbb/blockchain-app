@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 
-<body>
+<body class="login-bg">
     <div class="login-form">
-        <form action="/login" method="post">
+        <form action="/login" method="post" style="margin-top: 110px;">
             <h2 class="text-center">Sign in</h2>
             <div class="form-group">
                 <div class="input-group">
@@ -40,7 +40,7 @@
 
 
         </form>
-        <p class="text-center text-muted small">Don't have an account? <a href="/register">Sign up here!</a></p>
+        <p class="text-center text-muted small" style="color:white"> Don't have an account? <a href="/register">Sign up here!</a></p>
     </div>
 </body>
 
