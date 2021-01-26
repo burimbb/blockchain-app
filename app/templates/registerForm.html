@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 </head>
 
-<body>
+<body class="register-bg">
     <div class="login-form">
-        <form action="/register" method="post">
-            <h2 class="text-center">Register</h2>
+        <form action="/register" method="post" style="margin-top: 100px;">
+            <h2 class="text-center" style="color: white;">Register</h2>
             <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -50,8 +50,7 @@
                 </button>
             </div>
         </form>
-        <p class="text-center text-muted small">You already have an account? <a href="/login">Login here!</a></p>
-    </div>
+        <p class="text-center text-muted small" style="color: white;">You already have an account? <a href="/login">Login here!</a></p>    </div>
 </body>
 
 </html>
