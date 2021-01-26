@@ -6,9 +6,9 @@
 
 <center>
 	<form action="/submit" id="textform" method="post">
-		<textarea name="content" rows="4" cols="50" placeholder=" Write something and store it to blockchain! " style="border:solid"></textarea>
+		<textarea name="content" rows="4" cols="50" placeholder=" Write something and store it to blockchain! " style="border:solid 1px"></textarea>
 		<br>
-		<input type="text" name="author" style="margin: 15px; border:solid" placeholder=" Your name">
+		<input type="text" name="author" style="margin: 15px; border:solid 1px" placeholder=" Your name">
 		<input type= "submit" class="btn btn-primary" value="Post">
 	</form>
 </center>
@@ -21,7 +21,7 @@
 <div style="margin: 20px;">
 
 	{% for post in posts %}
-	<div class="post_box" style="background-color: #e9f3fb; border:solid">
+	<div class="post_box" style="background-color: #e9f3fb; border:solid 1px">
 		<div class="post_box-header">
 			{# <div class="post_box-options"><button class="option-btn">Reply</button></div> #}
 			<div style="background: rgb(0, 97, 146) none repeat scroll 0% 0%; box-shadow: rgb(0, 97, 146) 0px 0px 0px 2px;"
