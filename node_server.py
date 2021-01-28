@@ -175,15 +175,16 @@ def consensus():
         response = requests.get('{}chain'.format(node))
         length = response.json()['length']
         chain = response.json()['chain']
+        #check the longest chain is a valid one
         if length > current_len and blockchain.check_chain_validity(chain):
             # Longer valid chain found!
             current_len = length
             longest_chain = chain
-
+    #If the longest chain exists, replace the blockchain with it
     if longest_chain:
         blockchain = longest_chain
         return True
-
+    #If the longest chain doesn't exist, return False 
     return False
 
 
