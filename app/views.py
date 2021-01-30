@@ -68,10 +68,9 @@ def submit_textarea():
         'author': author,
         'content': post_content,
     }
-
+    # Submit a transaction
     new_tx_address = "{}/new_transaction".format(CONNECTED_NODE_ADDRESS)
 
-    # Submit a transaction
     requests.post(new_tx_address,
                   json=post_object,
                   headers={'Content-type': 'application/json'})
