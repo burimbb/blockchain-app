@@ -87,7 +87,7 @@ class Blockchain(Block):
             # using `compute_hash` method.
             delattr(block, "hash")
 
-            if not cls.is_valid_proof(block, block.hash) or \
+            if not cls.is_valid_proof(block, block_hash) or \
                     previous_hash != block.previous_hash:
                 result = False
                 break
